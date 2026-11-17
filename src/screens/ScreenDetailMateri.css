@@ -1,0 +1,126 @@
+.detail-container {
+  min-height: 100%;
+  background-color: var(--color-bg);
+}
+
+.validasi-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 100px;
+}
+
+.validasi-status.tervalidasi {
+  background-color: #EAF4F2;
+  color: #176B61;
+}
+
+.validasi-status.belum {
+  background-color: #FFF8EC;
+  color: #D69A36;
+}
+
+.bahasa-blok {
+  padding: 14px 16px;
+}
+
+.bahasa-blok-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.bahasa-blok-teks {
+  font-size: 16px;
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+.bahasa-blok--daerah {
+  background-color: #EAF4F2;
+  border-color: rgba(23,107,97,0.2);
+}
+
+.bahasa-blok--daerah .bahasa-blok-teks {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+/* Audio Player */
+.audio-player {
+  padding: 16px;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.audio-btn-main {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s;
+  box-shadow: 0 3px 10px rgba(23,107,97,0.3);
+}
+
+.audio-btn-main:hover { background-color: var(--color-primary-dark); }
+.audio-btn-main:active { transform: scale(0.93); }
+
+.audio-waveform {
+  flex: 1;
+}
+
+.audio-waveform-visual {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 28px;
+}
+
+.waveform-bar {
+  flex: 1;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+  min-height: 4px;
+}
+
+.waveform-bar--playing {
+  animation: wave 0.8s ease-in-out infinite;
+}
+
+/* Validasi info */
+.validasi-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+
+/* Footer */
+.detail-footer {
+  padding: 16px 20px 20px;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-light);
+  position: sticky;
+  bottom: 80px;
+}
+

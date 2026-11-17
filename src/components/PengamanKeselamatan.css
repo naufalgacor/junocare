@@ -1,0 +1,27 @@
+.pengaman-keselamatan {
+  display: flex;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid;
+  align-items: flex-start;
+}
+
+.pengaman-ikon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.pengaman-pesan {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pengaman-detail {
+  font-size: 12px;
+  color: #718096;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+

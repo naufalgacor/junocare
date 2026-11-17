@@ -1,0 +1,218 @@
+.verifikasi-container {
+  min-height: 100%;
+  background-color: var(--color-bg);
+}
+
+.ringkasan-blok {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+}
+
+.ringkasan-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ringkasan-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ringkasan-teks {
+  font-size: 14px;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+}
+
+.teachback-panduan {
+  background-color: #EAF4F2;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin: 10px 0;
+  border-left: 3px solid var(--color-primary);
+}
+
+/* Tombol Putar Ulang */
+.btn-putar-ulang {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--color-secondary);
+  border: 1.5px solid rgba(23, 107, 97, 0.2);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-putar-ulang:hover { background-color: #d4ebe7; }
+.btn-putar-ulang:active { transform: scale(0.98); }
+
+.btn-putar-ulang.playing {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.putar-ikon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s;
+}
+
+.btn-putar-ulang.playing .putar-ikon {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Checklist */
+.checklist-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist-list .checkbox-item {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.checklist-list .checkbox-item:last-child {
+  border-bottom: none;
+}
+
+/* Pilihan Hasil */
+.pilihan-hasil {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pilihan-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: all 0.2s;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pilihan-btn:hover {
+  border-color: #94A3B8;
+  background-color: #f8f9fa;
+}
+
+.pilihan-ikon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: var(--color-text-gray);
+}
+
+.pilihan-label {
+  font-size: 14px;
+  color: var(--color-text-dark);
+}
+
+/* Simpan sukses */
+.simpan-sukses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-lg);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Footer */
+.verifikasi-footer {
+  padding: 16px 20px 20px;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-light);
+  position: sticky;
+  bottom: 80px;
+}
+
+.text-dark { color: var(--color-text-dark); }
+.italic { font-style: italic; }
+
+/* Kartu ringkasan lapis 3 */
+.kartu-ringkasan-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.kartu-ringkasan {
+  border: 1.5px solid var(--color-border-light);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.kartu-ringkasan-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  background-color: #FAFAFA;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.kartu-ringkasan-nilai {
+  font-size: 13px;
+  color: var(--color-text-dark);
+  padding: 8px 10px;
+  line-height: 1.5;
+}
+
+.ujaran-ringkas-lapis3 {
+  background-color: var(--color-secondary);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-left: 3px solid var(--color-primary);
+}
+
+.simulasi-kosong {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 8px;
+}
+

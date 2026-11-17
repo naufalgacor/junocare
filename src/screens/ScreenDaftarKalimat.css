@@ -1,0 +1,115 @@
+.daftar-container {
+  min-height: 100%;
+  background-color: var(--color-bg);
+}
+
+.filter-chips-wrapper {
+  overflow-x: auto;
+  padding: 12px 20px 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filter-chips-wrapper::-webkit-scrollbar { display: none; }
+
+.filter-chips {
+  display: flex;
+  gap: 8px;
+  width: max-content;
+}
+
+.daftar-bahasa-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.daftar-list {
+  background-color: var(--color-white);
+}
+
+.kalimat-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.kalimat-item:last-child { border-bottom: none; }
+
+.kalimat-item-isi {
+  flex: 1;
+  padding: 14px 16px 14px 20px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.kalimat-item-isi:hover { background-color: #f8fffe; }
+.kalimat-item-isi:active { background-color: var(--color-secondary); }
+
+.kalimat-judul {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.kalimat-preview {
+  font-size: 13px;
+  color: var(--color-text-gray);
+  margin-top: 3px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.validasi-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+  padding: 2px 6px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.btn-play-kalimat {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 12px;
+  transition: all 0.2s;
+}
+
+.btn-play-kalimat.playing {
+  background-color: var(--color-primary-dark);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.btn-play-kalimat:hover { background-color: var(--color-primary-dark); }
+.btn-play-kalimat:active { transform: scale(0.9); }
+
+.daftar-kosong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.daftar-catatan {
+  padding: 16px 20px 8px;
+}
+

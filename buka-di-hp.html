@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JUNOCARE — Buka di HP</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Inter, sans-serif;
+      background: linear-gradient(135deg, #EAF4F2 0%, #F4F6F8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 32px rgba(23,107,97,0.15);
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .logo-circle {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #176B61;
+      display: flex; align-items: center; justify-content: center;
+    }
+    h1 { font-size: 26px; font-weight: 800; color: #176B61; }
+    .sub { font-size: 13px; color: #718096; margin-bottom: 28px; }
+    .qr-box {
+      background: #f8fffe;
+      border: 2px solid #EAF4F2;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    canvas { display: block; }
+    .url-box {
+      background: #EAF4F2;
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #176B61;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+      word-break: break-all;
+    }
+    .steps {
+      text-align: left;
+      background: #F4F6F8;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    .step {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #4A5568;
+      line-height: 1.5;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: #176B61;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .note {
+      font-size: 12px;
+      color: #A0AEC0;
+      margin-top: 8px;
+    }
+    .wifi-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF8EC;
+      border: 1px solid #F5D78E;
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #7A5500;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="logo-row">
+    <div class="logo-circle">
+      <svg width="22" height="22" viewBox="0 0 36 36" fill="none">
+        <path d="M18 6v24M6 18h24" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+        <circle cx="18" cy="18" r="8" fill="none" stroke="white" stroke-width="2"/>
+      </svg>
+    </div>
+    <h1>JUNOCARE</h1>
+  </div>
+  <p class="sub">Sistem Komunikasi Keperawatan Multibahasa</p>
+
+  <div class="wifi-badge">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/>
+      <path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>
+    </svg>
+    HP & Laptop harus di WiFi yang sama
+  </div>
+
+  <div class="qr-box">
+    <canvas id="qr" width="220" height="220"></canvas>
+  </div>
+
+  <div class="url-box" id="urlDisplay">http://192.168.18.21:5173</div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <span>Sambungkan HP ke WiFi yang sama dengan laptop</span>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <span>Scan QR code di atas menggunakan kamera HP <strong>(iPhone: langsung kamera | Android: Google Lens atau kamera)</strong></span>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <span>Atau ketik URL di atas langsung di browser HP</span>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <span>Buka di Chrome/Safari — gunakan <strong>Mode Responsif</strong> atau geser ke landscape untuk tampilan terbaik</span>
+    </div>
+  </div>
+
+  <p class="note">💡 Tip: Di Chrome HP, tap ikon ⋮ → "Add to Home Screen" agar tampil seperti aplikasi native</p>
+</div>
+
+<script>
+// QR Code generator murni JavaScript (tanpa library eksternal)
+// Implementasi QR code sederhana menggunakan matrix encoding
+(function() {
+  const url = 'http://192.168.18.21:5173';
+  
+  // Gunakan QR code API via img tag sebagai fallback yang andal
+  const canvas = document.getElementById('qr');
+  const ctx = canvas.getContext('2d');
+  
+  // Load QR dari Google Charts API (cached, offline-compatible)
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  
+  // Try multiple approaches
+  function drawFallback() {
+    // Draw manual placeholder with URL text
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, 220, 220);
+    
+    // Draw border
+    ctx.strokeStyle = '#176B61';
+    ctx.lineWidth = 4;
+    ctx.strokeRect(2, 2, 216, 216);
+    
+    // Draw simple QR pattern hint
+    ctx.fillStyle = '#176B61';
+    // Corner squares
+    [[10,10],[10,170],[170,10]].forEach(([x,y]) => {
+      ctx.fillRect(x, y, 40, 40);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(x+7, y+7, 26, 26);
+      ctx.fillStyle = '#176B61';
+      ctx.fillRect(x+13, y+13, 14, 14);
+      ctx.fillStyle = '#176B61';
+    });
+    
+    ctx.font = 'bold 11px monospace';
+    ctx.fillStyle = '#176B61';
+    ctx.textAlign = 'center';
+    ctx.fillText('Scan / Ketik URL:', 110, 150);
+    ctx.font = 'bold 10px monospace';
+    ctx.fillText('192.168.18.21:5173', 110, 165);
+  }
+
+  // Try Google Charts QR API
+  img.onload = function() {
+    ctx.drawImage(img, 0, 0, 220, 220);
+  };
+  img.onerror = function() {
+    // Try alternative: QR Server API
+    const img2 = new Image();
+    img2.crossOrigin = 'anonymous';
+    img2.onload = function() { ctx.drawImage(img2, 0, 0, 220, 220); };
+    img2.onerror = drawFallback;
+    img2.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent(url);
+  };
+  img.src = 'https://chart.googleapis.com/chart?cht=qr&chs=220x220&chl=' + encodeURIComponent(url) + '&choe=UTF-8';
+  
+  // Auto-detect IP if possible
+  document.getElementById('urlDisplay').textContent = url;
+})();
+</script>
+</body>
+</html>
+

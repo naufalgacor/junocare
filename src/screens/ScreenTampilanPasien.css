@@ -1,0 +1,168 @@
+.pasien-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #EAF4F2 0%, #F4F6F8 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.pasien-mode-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 20px 10px;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.pasien-konten {
+  flex: 1;
+  padding: 24px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pasien-bahasa-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Teks utama pasien — BESAR */
+.pasien-teks-utama {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid rgba(23,107,97,0.15);
+}
+
+.pasien-teks-utama p {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+  line-height: 1.4;
+}
+
+/* Teks pendukung */
+.pasien-teks-pendukung {
+  width: 100%;
+  background-color: rgba(255,255,255,0.7);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.pasien-pendukung-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.pasien-pendukung-teks {
+  font-size: 15px;
+  color: var(--color-text-gray);
+  line-height: 1.5;
+}
+
+/* Audio button besar */
+.pasien-audio-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.pasien-audio-btn {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(23,107,97,0.35);
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.pasien-audio-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(23,107,97,0.4);
+}
+
+.pasien-audio-btn:active { transform: scale(0.95); }
+
+.pasien-audio-btn.playing {
+  background-color: var(--color-primary-dark);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.pasien-audio-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.pasien-audio-progress {
+  width: 100%;
+  height: 5px;
+  background-color: #CBD5E0;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.pasien-progress-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 100px;
+  transition: width 0.1s linear;
+}
+
+/* Instruksi */
+.pasien-instruksi {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: rgba(255,255,255,0.8);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  width: 100%;
+  border: 1px solid rgba(23,107,97,0.15);
+  margin-bottom: 4px;
+}
+
+.pasien-instruksi-ikon { flex-shrink: 0; }
+
+.pasien-instruksi-teks {
+  font-size: 15px;
+  color: var(--color-text-dark);
+  line-height: 1.5;
+}
+
+/* Footer */
+.pasien-footer {
+  padding: 12px 24px 20px;
+}
+

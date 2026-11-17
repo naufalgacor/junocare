@@ -1,0 +1,103 @@
+.pengaturan-container {
+  min-height: 100%;
+  background-color: var(--color-bg);
+}
+
+.pengaturan-header {
+  background: linear-gradient(135deg, #176B61 0%, #1e8a7e 100%);
+  padding: 48px 20px 20px;
+}
+
+.pengaturan-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pengaturan-versi-badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  background-color: rgba(255,255,255,0.15);
+  border-radius: 100px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Statistik */
+.stat-row {
+  display: flex;
+  align-items: center;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.stat-angka {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 36px;
+  background-color: var(--color-border-light);
+}
+
+/* Riwayat */
+.riwayat-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.riwayat-item--border {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* Panduan */
+.panduan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panduan-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px;
+}
+
+.panduan-ikon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.text-dark { color: var(--color-text-dark); }
+
